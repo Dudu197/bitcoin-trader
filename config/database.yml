@@ -1,0 +1,30 @@
+
+
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  database: btc_development
+  pool: 5
+  host: localhost
+  username: root
+  password: 
+
+development:
+  <<: *default
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: btc_test
+
+production:
+  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  database: btc_production
+  pool: 5
+  host: localhost
+  username: <%= begin IO.read('/var/rails/database.username') rescue "" end %>
+  password: <%= begin IO.read('/var/rails/database.password') rescue "" end %>

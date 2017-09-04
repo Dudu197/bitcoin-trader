@@ -1,0 +1,36 @@
+
+development:
+  mode: test
+  win: 15
+  loss: 10
+  setup:
+    number: 1
+    value: 100
+    btc: 0
+   api:
+    id: 
+    secret: 
+
+production:
+  mode: test
+  win: 15
+  loss: 10
+  setup:
+    number: 1
+    value: 100
+    btc: 0
+   api:
+    id: 
+    secret: 
+
+test:
+  mode: test
+  setup:
+    number: 1
+    value: 100
+    btc: 0
+  win: 15
+  loss: 10
+   api:
+    id: 
+    secret: 
