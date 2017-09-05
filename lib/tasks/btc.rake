@@ -23,6 +23,24 @@ namespace :btc do
 		wallet.save
 	end
 
+	desc "Salva o preço da moeda neste momento"
+	task :save => [:environment] do
+		require 'net/http'
+		require 'json'
+		require 'date'
+		 
+		url = 'https://www.mercadobitcoin.net/api/BTC/ticker/'
+		uri = URI(url)
+		response = Net::HTTP.get(uri)
+		ticker = JSON.parse(response)["ticker"]
+		history = CoinHistory.new
+		date = DateTime.strptime(ticker["date"].to_s, '%s')
+		history.coin = 'BTC'
+		history.value = ticker["last"]
+		history.date = date
+		history.save
+	end
+
 	desc "Toma a decisão de compra e venda"
 	task :decision do
 

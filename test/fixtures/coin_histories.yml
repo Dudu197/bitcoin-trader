@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coin: MyString
+  value: 1.5
+  date: 2017-09-05 01:42:41
+
+two:
+  coin: MyString
+  value: 1.5
+  date: 2017-09-05 01:42:41

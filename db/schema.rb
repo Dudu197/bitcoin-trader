@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170904011720) do
+ActiveRecord::Schema.define(version: 20170905014241) do
+
+  create_table "coin_histories", force: true do |t|
+    t.string   "coin"
+    t.float    "value",      limit: 24
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "transactions", force: true do |t|
     t.float    "value",      limit: 24
